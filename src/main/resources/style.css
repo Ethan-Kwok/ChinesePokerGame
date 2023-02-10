@@ -1,0 +1,3 @@
+.button {
+    -fx-skin: 'com.example.chinesepokergame2.ButtonEffect';
+}

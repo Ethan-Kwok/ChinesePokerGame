@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chinesepokergame2.MainController">
+    <children>
+        <HBox fx:id="frontHBox" layoutX="43.0" layoutY="179.0" prefHeight="152.0" prefWidth="301.0" style="-fx-border-color: gray; -fx-border-width: 1; -fx-border-radius: 5;" />
+        <HBox fx:id="middleHBox" layoutX="43.0" layoutY="419.0" prefHeight="152.0" prefWidth="301.0" style="-fx-border-color: gray; -fx-border-width: 1; -fx-border-radius: 5;" />
+        <HBox fx:id="backHBox" layoutX="43.0" layoutY="654.0" prefHeight="152.0" prefWidth="301.0" style="-fx-border-color: gray; -fx-border-width: 1; -fx-border-radius: 5;" />
+        <HBox fx:id="buttonsHBox" layoutX="7.0" prefHeight="75.0" prefWidth="1920.0" spacing="30.0">
+            <children>
+                <Button fx:id="startButton" mnemonicParsing="false" onAction="#startGame" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: peachpuff; -fx-border-color: darkslategray; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15;" text="Start Game">
+                    <font>
+                        <Font name="Consolas" size="21.0" />
+                    </font>
+                    <stylesheets>
+                        <URL value="@../../../style.css" />
+                    </stylesheets>
+                </Button>
+                <Button fx:id="sortHandButton" mnemonicParsing="false" onAction="#onSortHandButtonClick" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color:  peachpuff; -fx-border-color: darkslategray; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15;" text="Sort Hand">
+                    <font>
+                        <Font name="Consolas" size="21.0" />
+                    </font>
+                    <stylesheets>
+                        <URL value="@../../../style.css" />
+                    </stylesheets>
+                </Button>
+                <Button fx:id="shuffleHandButton" mnemonicParsing="false" onAction="#onShuffleHandButtonClick" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: peachpuff; -fx-border-color: darkslategray; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15;" text="Shuffle Hand">
+                    <font>
+                        <Font name="Consolas" size="21.0" />
+                    </font>
+                    <stylesheets>
+                        <URL value="@../../../style.css" />
+                    </stylesheets>
+                </Button>
+                <Button fx:id="resetHandButton" mnemonicParsing="false" onAction="#resetHand" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: peachpuff; -fx-border-color: darkslategray; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15;" text="Reset Hand">
+                    <font>
+                        <Font name="Consolas" size="21.0" />
+                    </font>
+                    <stylesheets>
+                        <URL value="@../../../style.css" />
+                    </stylesheets>
+                </Button>
+                <Button fx:id="showdownButton" mnemonicParsing="false" onAction="#startShowdown" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: peachpuff; -fx-border-color: darkslategray; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15;" text="Showdown">
+                    <font>
+                        <Font name="Consolas" size="21.0" />
+                    </font>
+                    <stylesheets>
+                        <URL value="@../../../style.css" />
+                    </stylesheets>
+                </Button>
+                <HBox prefHeight="75.0" prefWidth="347.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="75.0" prefWidth="228.0" spacing="3.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="254.0" text="Player Score: ">
+                                    <font>
+                                        <Font name="Consolas" size="28.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="303.0" text="Bot Score: ">
+                                    <font>
+                                        <Font name="Consolas" size="28.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="92.0" spacing="3.0">
+                            <children>
+                                <Label fx:id="playerScoreLabel" text="0">
+                                    <font>
+                                        <Font name="Consolas" size="28.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="botScoreLabel" text="0">
+                                    <font>
+                                        <Font name="Consolas" size="28.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+      <VBox fx:id="cheatVBox" alignment="CENTER" layoutX="1553.0" layoutY="7.0" prefHeight="185.0" prefWidth="316.0">
+         <children>
+              <HBox prefHeight="83.0" prefWidth="366.0" spacing="15.0">
+                  <children>
+                      <VBox alignment="TOP_RIGHT" prefHeight="252.0" prefWidth="211.0">
+                          <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="261.0" text="Accuracy:">
+                                  <font>
+                                      <Font name="Consolas" size="28.0" />
+                                  </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="247.0" text="Player Luck:">
+                                  <font>
+                                      <Font name="Consolas" size="28.0" />
+                                  </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="303.0" text="Bot Luck:">
+                                  <font>
+                                      <Font name="Consolas" size="28.0" />
+                                  </font>
+                              </Label>
+                          </children>
+                      </VBox>
+                      <VBox prefHeight="96.0" prefWidth="129.0">
+                          <children>
+                              <Label fx:id="accuracyLabel" text="100.00%">
+                                  <font>
+                                      <Font name="Consolas" size="28.0" />
+                                  </font>
+                              </Label>
+                              <Label fx:id="playerLuckLabel" text="100.00%">
+                                  <font>
+                                      <Font name="Consolas" size="28.0" />
+                                  </font>
+                              </Label>
+                              <Label fx:id="botLuckLabel" text="100.00%">
+                                  <font>
+                                      <Font name="Consolas" size="28.0" />
+                                  </font>
+                              </Label>
+                          </children>
+                      </VBox>
+                  </children>
+              </HBox>
+            <Separator opacity="0.0" prefHeight="12.0" prefWidth="316.0" />
+              <Button fx:id="getBestHandButton" mnemonicParsing="false" onAction="#getBestHand" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: peachpuff; -fx-border-color: darkslategray; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15;" text="Get Best Hand">
+                  <font>
+                      <Font name="Consolas" size="21.0" />
+                  </font>
+                  <stylesheets>
+                      <URL value="@../../../style.css" />
+                  </stylesheets>
+              </Button>
+         </children>
+      </VBox>
+      <Button fx:id="enableCheatsButton" layoutX="50.0" layoutY="965.0" mnemonicParsing="false" onAction="#enableCheats" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: tomato; -fx-border-color: darkslategray; -fx-border-width: 2; -fx-background-radius: 15; -fx-border-radius: 15;" text="Enable Cheats">
+         <font>
+            <Font name="Consolas" size="21.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../../style.css" />
+         </stylesheets>
+      </Button>
+    </children>
+</AnchorPane>
